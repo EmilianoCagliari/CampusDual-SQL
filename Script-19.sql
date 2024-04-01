@@ -1,0 +1,10 @@
+//Indica si hay alguna coincidencia de nacimiento de ciudad (y si las hay, indicarlas) entre los miembros del videoclub y los directores.
+
+--SELECT MEMBER_TOWN  FROM MEMBERS ORDER BY MEMBER_TOWN ASC
+
+--SELECT DIRECTOR_BIRTH_PLACE  FROM DIRECTORS ORDER BY DIRECTOR_BIRTH_PLACE ASC
+
+
+SELECT M.MEMBER_NAME, D.DIRECTOR_NAME  FROM MEMBERS AS M
+INNER JOIN DIRECTORS AS D
+ON M.MEMBER_TOWN = D.DIRECTOR_BIRTH_PLACE 

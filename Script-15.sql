@@ -1,0 +1,3 @@
+//Devuelve los miembros que alquilaron al menos una película entre el año 2010 y el 2015
+
+SELECT * FROM MEMBERS_MOVIE_RENTAL WHERE MEMBER_RENTAL_DATE BETWEEN '2010-01-01' AND '2015-12-31' ORDER BY MEMBER_RENTAL_DATE DESC
