@@ -1,8 +1,12 @@
 //Muestra las películas con los actores que han participado en cada una de ellas
 
 
-SELECT m.MOVIE_NAME, a.ACTOR_NAME  FROM movies AS m
+SELECT m.MOVIE_NAME, 
+GROUP_CONCAT(a.ACTOR_NAME ORDER BY a.ACTOR_NAME SEPARATOR ', ') AS ACTORS
+FROM movies AS m
 INNER JOIN PUBLIC.MOVIES_ACTORS AS ma
 ON m.MOVIE_ID = ma.MOVIE_ID 
 INNER JOIN PUBLIC.ACTORS AS a
-ON ma.ACTOR_ID  = a.ACTOR_ID 
+ON ma.ACTOR_ID  = a.ACTOR_ID  
+GROUP BY m.MOVIE_NAME 
+ORDER BY m.MOVIE_NAME asc
